@@ -27,6 +27,9 @@ export class AuthController {
   @Public()
   @Post('signup')
   signup(@Body() createUserDto: CreateUserDto) {
+    console.log('dto.constructor.name:', createUserDto.constructor.name); // должно вывести "CreateUserDto"
+    console.log('dto:', createUserDto);
+
     return this.usersService.create(createUserDto);
   }
 }
