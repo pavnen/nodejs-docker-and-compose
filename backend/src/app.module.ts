@@ -10,6 +10,14 @@ import { OffersModule } from './offers/offers.module';
 import { JwtGuard } from './auth/guards/jwt.guard';
 import { ConfigModule } from '@nestjs/config';
 
+const {
+  POSTGRES_USER,
+  POSTGRES_PASSWORD,
+  POSTGRES_DB,
+  POSTGRES_HOST,
+  POSTGRES_PORT,
+} = process.env;
+
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -17,11 +25,11 @@ import { ConfigModule } from '@nestjs/config';
     }),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: process.env.DATABASE_HOST,
-      port: Number(process.env.DATABASE_PORT),
-      username: process.env.DATABASE_LOGIN,
-      password: process.env.DATABASE_PASSWORD,
-      database: 'nest_project',
+      username: POSTGRES_USER,
+      password: POSTGRES_PASSWORD,
+      database: POSTGRES_DB,
+      host: POSTGRES_HOST,
+      port: Number(POSTGRES_PORT),
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),

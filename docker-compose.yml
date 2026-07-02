@@ -4,7 +4,7 @@ services:
     build:
       context: backend
       dockerfile: Dockerfile
-    image: mironovsergey/kupipodariday-backend
+    image: pavnen/kupipodariday-backend
     ports:
       - '4000:3000'
     env_file:
@@ -20,7 +20,7 @@ services:
     build:
       context: frontend
       dockerfile: Dockerfile
-    image: mironovsergey/kupipodariday-frontend
+    image: pavnen/kupipodariday-frontend
     ports:
       - '8081:80'
     restart: always
