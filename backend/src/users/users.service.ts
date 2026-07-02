@@ -67,10 +67,6 @@ export class UsersService {
       password,
     });
 
-    console.log({
-      ...dto,
-      password,
-    });
     return await this.userRepository.save(user);
   }
 

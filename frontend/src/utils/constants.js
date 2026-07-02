@@ -1,4 +1,4 @@
-export const URL = "http://api.pavnen.diploma.nomorepartiessite.ru:3000";
+export const URL = "https://api.pavnen.diploma.nomorepartiessite.ru";
 
 export const MINIMUM_PASSWORD_LENGTH = 3;
 export const MINIMUM_USERNAME_LENGTH = 3;
