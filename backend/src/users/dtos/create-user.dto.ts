@@ -4,10 +4,12 @@ import {
   MaxLength,
   MinLength,
   IsOptional,
+  Allow,
 } from 'class-validator';
 
 export class CreateUserDto {
   @IsString()
+  @Allow()
   @MinLength(1)
   @MaxLength(30)
   username: string;

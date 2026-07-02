@@ -11,6 +11,7 @@ export class User {
   id: number;
 
   @Column({ unique: true, length: 30 })
+  @IsString()
   username: string;
 
   @Column({ default: 'Пока ничего не рассказал о себе', length: 200 })
