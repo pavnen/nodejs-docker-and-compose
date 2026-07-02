@@ -6,4 +6,4 @@ IP адрес 158.160.231.160
 
 Frontend https://pavnen.diploma.nomorepartiessite.ru/ 
 
-Backend https://api.pavnen.diploma.nomorepartiessite.ru:3000 
+Backend https://api.pavnen.diploma.nomorepartiessite.ru/ 
