@@ -1,6 +1,6 @@
 FROM node:22-alpine AS builder
 WORKDIR /app
-COPY package.json package-lock.json  ./
+COPY package*.json ./
 RUN npm i
 COPY . ./
 RUN npm run build
@@ -8,7 +8,7 @@ RUN npm run build
 FROM node:22-alpine AS production
 WORKDIR /app
 COPY --from=builder /app/package.json /app/package-lock.json ./
-RUN npm i --prod
+RUN npm ci --production
 COPY --from=builder /app/dist ./dist
 COPY ./ecosystem.config.js ./
 EXPOSE 4000

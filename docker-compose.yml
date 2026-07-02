@@ -4,7 +4,7 @@ services:
     build:
       context: backend
       dockerfile: Dockerfile
-    image: pavnen/kupipodariday-backend
+    image: backend:latest
     ports:
       - '4000:3000'
     env_file:
@@ -20,7 +20,7 @@ services:
     build:
       context: frontend
       dockerfile: Dockerfile
-    image: pavnen/kupipodariday-frontend
+    image: frontend:latest
     ports:
       - '8081:80'
     restart: always
